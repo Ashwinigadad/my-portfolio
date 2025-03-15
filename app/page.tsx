@@ -7,8 +7,6 @@ import { Progress } from "@/components/ui/progress";
 import { ModeToggle } from "@/components/mode-toggle";
 import { BadgeCheck } from "lucide-react";
 import { useState } from "react";
-
-
 import {
   Github,
   Linkedin,
@@ -125,7 +123,15 @@ export default function Home() {
   
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden" onMouseMove={handleMouseMove}
+>      {/* Spotlight Effect */}
+      <motion.div
+        className="fixed inset-0 pointer-events-none"
+        style={{
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.15), transparent)`,
+        }}
+      />
+  
       <header className="fixed w-full top-0 z-50 backdrop-blur-sm border-b">
         <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
           <motion.h1 
@@ -140,6 +146,7 @@ export default function Home() {
       </header>
 
       <main className="container mx-auto px-4 pt-24">
+        
         {/* Hero Section */}
         <motion.section
       className="relative min-h-[80vh] flex items-center justify-center overflow-hidden"
@@ -149,12 +156,12 @@ export default function Home() {
       onMouseMove={handleMouseMove}
     >
       {/* Spotlight Effect */}
-      <motion.div
+      {/* <motion.div
         className="absolute inset-0 bg-gradient-radial from-white/10 to-transparent pointer-events-none"
         style={{
           background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.2), transparent)`,
         }}
-      />
+      /> */}
 
       <motion.div className="text-center relative z-10">
         <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden">
@@ -198,6 +205,7 @@ export default function Home() {
   viewport={{ once: true }}
   transition={{ duration: 0.8 }}
 >
+  
   <motion.h2 
     className="text-3xl font-bold text-center mb-12"
     initial={{ opacity: 0, y: -20 }}
@@ -208,6 +216,7 @@ export default function Home() {
   </motion.h2>
 
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    
     {/* Frontend */}
     <motion.div 
       whileHover={{ scale: 1.05 }} 

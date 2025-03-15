@@ -1,7 +1,7 @@
 "use client"
 import { motion } from "framer-motion";
 
-export default function Page() {
+export default function page() {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-900">
       <motion.div
