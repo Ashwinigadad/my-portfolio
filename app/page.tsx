@@ -156,12 +156,12 @@ export default function Home() {
       onMouseMove={handleMouseMove}
     >
       {/* Spotlight Effect */}
-      {/* <motion.div
+      <motion.div
         className="absolute inset-0 bg-gradient-radial from-white/10 to-transparent pointer-events-none"
         style={{
           background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 255, 255, 0.2), transparent)`,
         }}
-      /> */}
+      />
 
       <motion.div className="text-center relative z-10">
         <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden">
